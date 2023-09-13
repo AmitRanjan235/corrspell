@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Spelling Corrector Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<style>
+		body{
+            font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+            background-image: url('https://wallpapercave.com/wp/wp6079629.jpg'); /* Add your background image URL */
+            background-size: cover;
+            color: #fff;
+        }
+		.title{color:#27823b;}
+		.container-fluid{width:90%;}
+		.form-group { margin-bottom: 20px; }
+		.form-control { background-color: #333; border-color: #51d4f6; color: #fff; }
+		.btn-primary { background-color: #51d4f6; border-color: #51d4f6; }
+		.btn-primary:hover { background-color: #4db2c3; border-color: #4db2c3; }
+		.result-box { background-color: #333; color: #fff; padding: 20px; border-radius: 10px; overflow-y: auto; height: 350px; }
+		.loader { border-top: 8px solid #363e75; }
+		.loader:after { border-top: 8px solid #51d4f6; }
+		.footer{ position: absolute; bottom: 0px; width: 100%; }
+	</style>
+</head>
+
+<body>
+
+	<section class="testimonials text-center">
+		<div class="container-fluid">
+			<h4 class="my-5 title">Sup, I'm Corrspell </h4>
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<form method="post" id="datafetch_form" enctype="multipart/form-data">
+						<div class="form-group">
+							<textarea class="form-control" rows="5" id="comment" placeholder="Enter your data" required></textarea>
+						</div>
+						<div class="text-center"><button class="form-control btn-primary mb-5" id="fetch">Predict</button></div>
+					</form>
+				</div>
+				<div class="res-container col-md-6 col-xs-12">
+					<div class="result-box shadow rounded-lg" style="max-height: 200px;"> <!-- Adjust the max-height value -->
+						<h6 class="title">Results</h6>
+						<div class="json-result">
+							
+						</div>
+					</div>
+				</div>
+				
+				</div>
+			</div>						
+		</div>
+	</section>
+	
+	<div id="loading"><div class="loader"></div></div>
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#loading').hide();
+			
+			$("#data").change(function(e){
+			});
+			$("#fetch").click(function(e){
+				e.preventDefault();
+				var text_data = $('#comment').val();
+				if($('#comment').val() !=""){
+					$('#loading').show();
+					$.ajax({
+						url : "../predict",   //change url
+						type: "post",
+						mode: 'no-cors',
+						crossdomain: true,
+						withCredentials: false,
+						credentials: 'same-origin',
+						headers: {
+							'Content-Type': 'application/json;charset=UTF-8',
+							"Access-Control-Allow-Origin": "*"
+						},
+						data: JSON.stringify({data:text_data}),
+						success: function(response){
+							$(".json-result").html("");
+							$(".json-result").html("<p>" + JSON.stringify(response.text,true,2) + "</p>");							
+							$('#loading').hide();
+						}
+					});
+				}
+				else{alert("No data is entered!");$('#comment').focus();}
+			});
+		});
+	</script>
+</body>
+
+</html>
