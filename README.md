@@ -51,7 +51,7 @@ To set up the project environment, follow these steps:
 
 3. **spellingcorrector.py:** This file contains the core spell correction logic.
 
-4. **clientApp.py:** This file serves as the entry point of the application and includes the Flask web server.
+4. **App.py:** This file serves as the entry point of the application and includes the Flask web server.
 
 ## Testing
 To test the spell correction tool locally, follow these steps:
