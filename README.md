@@ -40,7 +40,8 @@ To set up the project environment, follow these steps:
 3. Install the necessary packages from `requirements.txt` using `pip install -r requirements.txt`.
 
 ## Workflow Diagram
-[Insert Workflow Diagram Here]
+![Workflow Diagram](https://github.com/AmitRanjan235/corrspell/blob/d06fdb999128f873d5155cade78b449f2b2fb6ba/architecture.drawio.png)
+
 
 ## Project Structure
 1. **Project Directory:** This directory contains various project files, including the spell correction logic, Flask server, etc.
