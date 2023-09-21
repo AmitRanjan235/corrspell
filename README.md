@@ -67,7 +67,7 @@ The Spell Corrector project successfully addresses the issue of spelling errors 
 While the project achieves its objectives, future enhancements may include the integration of pre-trained language models like BERT or GPT-2 for even higher correction accuracy. Additionally, expanding language support and actively seeking user feedback will contribute to continuous improvement.
 
 ## Contributors
-- [List of Contributors]
+- Amit Ranjan
 
 ## License
 This project is licensed under the [License Name] - see the [LICENSE](LICENSE) file for details.
