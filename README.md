@@ -56,7 +56,7 @@ To set up the project environment, follow these steps:
 ## Testing
 To test the spell correction tool locally, follow these steps:
 
-1. Run `clientApp.py`.
+1. Run `App.py`.
 2. Access the web server at `http://0.0.0.0:5000/`.
 3. Enter a sentence with misspelled words and click "Predict."
 
