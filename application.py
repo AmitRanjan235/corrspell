@@ -7,17 +7,17 @@ from spellcorrector import spell_corrector
 os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
 
-app = Flask(__name__)
-CORS(app)
+application = Flask(__name__)
+CORS(application)
 
-@app.route("/", methods=['GET'])
+@application.route("/", methods=['GET'])
 @cross_origin()
 def home():
     return render_template('index.html')
 
 
 
-@app.route("/predict", methods=['POST'])
+@application.route("/predict", methods=['POST'])
 @cross_origin()
 def predictRoute():
     data = request.json['data']
@@ -28,4 +28,4 @@ def predictRoute():
 #port = int(os.getenv("PORT"))
 if __name__ == "__main__":
     #app.run(host='0.0.0.0', port=port)
-    app.run(host='127.0.0.1', port=9000, debug=True)
+    application.run(host='127.0.0.1', port=9000, debug=True)
