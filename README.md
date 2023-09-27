@@ -1,4 +1,5 @@
 # CorrSpell
+![Frontend](https://github.com/AmitRanjan235/corrspell/blob/7528c5c3cd6f184fe894e67093687dc8035bd971/frontend.png)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -50,12 +51,12 @@ To set up the project environment, follow these steps:
 
 3. **spellingcorrector.py:** This file contains the core spell correction logic.
 
-4. **clientApp.py:** This file serves as the entry point of the application and includes the Flask web server.
+4. **App.py:** This file serves as the entry point of the application and includes the Flask web server.
 
 ## Testing
 To test the spell correction tool locally, follow these steps:
 
-1. Run `clientApp.py`.
+1. Run `App.py`.
 2. Access the web server at `http://0.0.0.0:5000/`.
 3. Enter a sentence with misspelled words and click "Predict."
 
@@ -66,7 +67,7 @@ The Spell Corrector project successfully addresses the issue of spelling errors 
 While the project achieves its objectives, future enhancements may include the integration of pre-trained language models like BERT or GPT-2 for even higher correction accuracy. Additionally, expanding language support and actively seeking user feedback will contribute to continuous improvement.
 
 ## Contributors
-- [List of Contributors]
+- Amit Ranjan
 
 ## License
 This project is licensed under the [License Name] - see the [LICENSE](LICENSE) file for details.
