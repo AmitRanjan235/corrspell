@@ -1,5 +1,5 @@
 # CorrSpell
-![Frontend](https://github.com/AmitRanjan235/corrspell/blob/7528c5c3cd6f184fe894e67093687dc8035bd971/frontend.png)
+![Frontend](https://github.com/AmitRanjan235/corrspell/blob/c295f32603f267898e08bd77cd609b658584e60d/web_app_in_action.png)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
