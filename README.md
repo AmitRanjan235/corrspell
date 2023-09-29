@@ -60,6 +60,53 @@ To test the spell correction tool locally, follow these steps:
 2. Access the web server at `http://0.0.0.0:5000/`.
 3. Enter a sentence with misspelled words and click "Predict."
 
+## Deployment on Render
+[Your Live Web App](https://spelling-corrector.onrender.com/)
+
+You can easily deploy this Flask application on the Render platform. Follow these steps to get your project up and running:
+
+### Prerequisites
+
+- An account on Render (https://render.com/)
+- A GitHub repository with your project code
+
+### Deployment Steps
+
+1. [Sign in to Render](https://render.com/).
+
+2. Create a new web service on Render:
+   - Click the "New +" button on your Render dashboard.
+   - Select "Web Service" from the options.
+   - Choose the GitHub repository where your Flask application is hosted.
+
+3. Configure your deployment settings:
+   - Choose the appropriate branch (e.g., "main") to deploy.
+   - Set the build command to create a virtual environment, install dependencies, and start your Flask app. For example:
+     ```bash
+     python -m venv venv
+     source venv/bin/activate
+     pip install -r requirements.txt
+     gunicorn -w 4 -b 0.0.0.0:8000 application:app
+     ```
+
+4. Define environment variables:
+   - If your Flask app relies on environment variables, set them in the Render dashboard under the "Environment" section.
+
+5. Click the "Create Web Service" button to initiate the deployment process.
+
+6. Render will automatically build and deploy your Flask application. You can monitor the deployment progress in the Render dashboard.
+
+7. Once the deployment is successful, you will receive a URL where your application is accessible.
+
+That's it! Your Flask application is now live on Render. You can access it using the provided URL.
+
+### Custom Domain (Optional)
+
+If you have a custom domain, you can configure it in the Render dashboard to point to your deployed application.
+
+For more detailed information and advanced configuration options, refer to the [Render documentation](https://render.com/docs/deploy-flask).
+
+
 ## Conclusion
 The Spell Corrector project successfully addresses the issue of spelling errors in text. It provides a reliable tool for correcting various types of spelling mistakes, enhancing the overall quality of text content.
 
